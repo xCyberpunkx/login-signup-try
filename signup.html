@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Football Website Signup</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #004080;
+    color: black;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .signup-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .signup-container h2 {
+    color: #004080;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+  }
+
+  .form-group label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  .form-group input[type="checkbox"] {
+    margin: 0;
+    margin-right: 10px; /* Adjust the margin here */
+  }
+
+  .form-group button {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #004080;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+  <form action="signup.php" method="post">
+  <div class="signup-container">
+    <h2>Sign Up for KORANOW</h2>
+    <form>
+      <div class="form-group">
+        <input type="text" placeholder="Full Name">
+      </div>
+      <div class="form-group">
+        <input type="email" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <input type="password" placeholder="Password">
+      </div>
+      <div class="form-group">
+        <label>
+          <input type="checkbox"> I accept the terms and conditions
+        </label>
+      </div>
+      <div class="form-group">
+        <button type="submit">Sign Up</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
