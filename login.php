@@ -2,22 +2,29 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
-    
+
     // Check if the email exists
     $users = file_get_contents('users.txt');
     $users = json_decode($users, true);
-    foreach ($users as $user) {
-        if ($user['email'] == $email) {
-            if (password_verify($password, $user['password'])) {
-                echo "Login successful.";
-                exit();
-            } else {
-                echo "Invalid password.";
-                exit();
+
+    if ($users === null) {
+        echo "Error reading user data.";
+    } else {
+        $authenticated = false;
+        foreach ($users as $user) {
+            if ($user['email'] == $email && password_verify($password, $user['password'])) {
+                $authenticated = true;
+                break;
             }
         }
-    }
 
-    echo "User not found. Please register or check your email.";
+        if ($authenticated) {
+            // Redirect to a logged-in page
+            header("Location: welcome.php");
+            exit();
+        } else {
+            echo "Invalid email or password.";
+        }
+    }
 }
 ?>
